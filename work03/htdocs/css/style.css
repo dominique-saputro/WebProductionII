@@ -1,0 +1,374 @@
+html {
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.body {
+  padding: 15px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  margin-left: 15px;
+}
+
+.topNav {
+  list-style: none;
+  display: flex;
+  color: #000;
+  padding-top: 10px;
+}
+
+.topNav li a {
+  text-decoration: none;
+}
+
+.topNav li {
+  padding-right: 25px;
+}
+
+.topNav li:not(:last-child) {
+  margin-top: 10px;
+}
+
+.topNav li a {
+  color: #000;
+}
+
+.topNav .topButton {
+  background-color: #FF532A;
+  color: #fff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.topNav .topButton a {
+  color: white;
+}
+
+.navButton,
+.navButton span {
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: all .4s;
+}
+
+.navButton {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  border: solid 1px #000;
+}
+
+.navButton span {
+  position: absolute;
+  left: 4px;
+  width: 80%;
+  height: 3px;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.navButton span:nth-of-type(1) {
+  top: 7px;
+}
+
+.navButton span:nth-of-type(2) {
+  top: 15px;
+}
+
+.navButton span:nth-of-type(3) {
+  top: 23px;
+}
+
+.navButton.active span:nth-of-type(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.navButton.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.navButton.active span:nth-of-type(3) {
+  transform: translateY(-8px) rotate(45deg);
+}
+
+.mainBanner img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.mainBanner .bannerText {
+  position: absolute;
+  top: 150px;
+  left: 33%;
+  width: 37%;
+}
+
+.mainBanner .bannerText h2 {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: normal;
+  line-height: 2.5rem;
+}
+
+.mainBanner .bannerText h2 span {
+  font-size: 0.6em;
+}
+
+.mainBanner .bannerButton {
+  background-color: #FF532A;
+  color: #fff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 0.9em;
+  width: 300px;
+  margin: 0% auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin: 50px auto;
+}
+
+h4 {
+  font-weight: normal;
+  margin: 10px auto;
+}
+
+.infoList {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoList li a {
+  text-decoration: none;
+}
+
+.infoList li {
+  width: 30%;
+}
+
+.infoList li h3 {
+  font-size: 1.2rem;
+  color: white;
+  background-color: #333;
+  font-weight: normal;
+  text-align: center;
+  padding: 10px;
+}
+
+.infoList li p {
+  text-align: justify;
+  padding: 20px 5px;
+  line-height: 1.5em;
+}
+
+.infoTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.infoTable td, .infoTable th {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.infoTable th {
+  font-weight: bold;
+}
+
+.infoTable thead th {
+  background: #333;
+  color: white;
+  font-weight: normal;
+}
+
+.infoTable td:first-child {
+  background-color: #F0F4F7;
+}
+
+.infoTable tbody tr:nth-child(2) td, .infoTable tbody tr:nth-child(4) td {
+  background-color: #E7E9EC;
+}
+
+.footerNav {
+  list-style: none;
+  display: flex;
+  background-color: #666;
+  padding: 15px 30px;
+  margin-top: 50px;
+}
+
+.footerNav li a {
+  text-decoration: none;
+}
+
+.footerNav li {
+  margin-right: 15px;
+}
+
+.footerNav li a {
+  color: white;
+}
+
+.copyright {
+  background-color: #000;
+  color: #ccc;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media only screen and (max-width: 960px) {
+  .body {
+    padding: 0;
+  }
+  .infoList {
+    width: 70%;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .infoList li {
+    width: 45%;
+    margin-bottom: 25px;
+  }
+  h4 {
+    padding: 0 25px;
+  }
+  .infoTable {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 80%;
+  }
+  header {
+    display: block;
+  }
+  .topNav {
+    display: none;
+    width: 100%;
+  }
+  .topNav.open {
+    display: block;
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+  }
+  .topNav.open li {
+    border-top: solid 1px #ccc;
+    padding: 20px 30px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+  }
+  .topNav.open li:last-child {
+    display: none;
+  }
+  .topNav.open li:not(:last-child) .arrow {
+    border: solid #ccc;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    position: absolute;
+    right: 30px;
+  }
+  .navButton {
+    display: block;
+  }
+  .mainBanner .bannerButton {
+    width: 100%;
+    padding: auto;
+  }
+  .infoList {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .infoList li {
+    width: 90%;
+    margin: 15px auto;
+  }
+  .infoTable {
+    display: block;
+  }
+  .infoTable thead {
+    display: none;
+  }
+  .infoTable tbody {
+    display: block;
+  }
+  .infoTable tbody tr {
+    display: block;
+    margin-bottom: 1.5em;
+  }
+  .infoTable tbody tr:nth-child(2) td, .infoTable tbody tr:nth-child(4) td {
+    background-color: #fff;
+  }
+  .infoTable tbody tr th, .infoTable tbody tr td {
+    display: list-item;
+    list-style: none;
+  }
+  .infoTable tbody tr td:first-child {
+    list-style-type: none;
+    color: #fff;
+    background: #333;
+  }
+  .infoTable tbody tr td:nth-of-type(n+2):before {
+    margin-left: 10px;
+    content: attr(data-label);
+  }
+  .infoTable tbody tr td:nth-child(3) {
+    background-color: #E7E9EC;
+  }
+  .footerNav {
+    background-color: #fff;
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  .footerNav li {
+    border-top: 1px solid #ccc;
+    padding: 20px 30px;
+  }
+  .footerNav li a {
+    color: #000;
+    margin: 0;
+  }
+  .footerNav li a .arrow {
+    border: solid #ccc;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    position: absolute;
+    right: 30px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

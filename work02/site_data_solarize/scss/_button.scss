@@ -1,0 +1,43 @@
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: none;
+    border-radius: none;
+    border: 2px solid;
+    border-color: $themeColor;
+    color: $themeColor;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.90em 1.2em;
+    letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    -ms-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+	&:hover {	
+    	background: $themeColor;
+    	color: $baseColor;
+	}
+	
+	&.alt {
+    	border-color: inherit;
+    	color: inherit;
+		
+		&:hover{
+			background: $baseColor;
+    		color: $themeColor;
+		}
+	}
+	
+	&.fit { width: 100%; }
+	
+	&.small { font-size: 0.8em; }
+}

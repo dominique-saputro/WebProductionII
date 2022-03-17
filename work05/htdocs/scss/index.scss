@@ -1,0 +1,309 @@
+$fontColor: #fff;
+$mainColor: #333;
+$secColor: #ccc;
+$key1: #4EACDD;
+$key2: #0FAD8C;
+
+@mixin button {
+    border: solid 1px $fontColor;
+    padding: 10px 40px;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    &:hover{
+        background: #ccc;
+    }
+}
+
+@mixin contentTitle {
+    font-size: 2.5rem;
+    width: 550px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+@mixin contentText {
+    font-weight: normal;
+    width: 550px;
+    text-align: justify;
+    font-size: 0.9rem;
+    line-height: 2rem;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+@mixin articleSet {
+    padding-top: 12%;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+header{
+    background-color: $mainColor;
+    color: $fontColor;
+    font-family: 'Verdana', serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px 20px 20px;
+
+    .titleLogo{
+        font-size: 1.3rem;
+    }
+
+    .titleMenu{
+        display: flex;
+
+        p{
+            padding-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .menuTrigger{
+            display: inline-block;
+            box-sizing: border-box;
+            text-decoration: none;
+            position: absolute;
+            top: 25px;
+            right: 55px;
+            width: 15px;
+            height: 20px;
+          
+              span {
+              position: absolute;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background-color: #fff;
+              border-radius: 4px;
+          
+                  &:nth-of-type(1) {
+                  top: 0px;
+                  }
+          
+                  &:nth-of-type(2) {
+                  top: 5px;
+                  }
+          
+                  &:nth-of-type(3) {
+                  top: 10px;
+                  }
+              }
+          }
+    }
+}
+
+
+
+main{
+    font-family: 'Sawarabi Gothic';
+
+    .button{
+        @include button();
+    }
+
+    .content{
+        background-attachment: fixed;
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        height: 650px;
+
+        article{
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        &:nth-of-type(1), &:nth-of-type(3){
+            article{
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+        }
+    }
+
+    #first{
+        background-image: url(../images/pic2.jpg);
+        overflow: hidden;
+        
+        article{
+            @include articleSet();
+            padding-top: 18%;
+            text-align: right;
+            height: calc(100vh - 60px);
+
+            h2{
+                font-size: 3rem;
+                font-weight: bold;
+            }
+
+            p{
+                font-size: 1.8rem;
+                font-weight: normal;
+                margin-top: 20px;
+                margin-bottom: 40px;
+            }
+
+            a{
+                color: $fontColor;
+                font-size: 1.2rem;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: 0 100%;
+            transform: translateZ(8px);
+            pointer-events: none;
+            background-image: linear-gradient(
+              to bottom,
+              hsla(0, 0%, 0%, 0) 0%,
+              hsla(0, 0%, 0%, 0.013) 8%,
+              hsla(0, 0%, 0%, 0.049) 14.8%,
+              hsla(0, 0%, 0%, 0.104) 20.8%,
+              hsla(0, 0%, 0%, 0.175) 26%,
+              hsla(0, 0%, 0%, 0.259) 30.8%,
+              hsla(0, 0%, 0%, 0.352) 35.3%,
+              hsla(0, 0%, 0%, 0.45) 39.8%,
+              hsla(0, 0%, 0%, 0.55) 44.5%,
+              hsla(0, 0%, 0%, 0.648) 49.5%,
+              hsla(0, 0%, 0%, 0.741) 55.2%,
+              hsla(0, 0%, 0%, 0.825) 61.7%,
+              hsla(0, 0%, 0%, 0.896) 69.2%,
+              hsla(0, 0%, 0%, 0.951) 77.9%,
+              hsla(0, 0%, 0%, 0.987) 88.1%,
+              hsl(0, 0%, 0%) 100%
+            );
+            z-index: 3;
+          }
+    }
+
+    #second{
+        background-color: $fontColor;
+        color: $mainColor;
+        
+        article{
+            @include articleSet();
+            text-align: left;
+            color: $mainColor;
+
+            h2{
+                @include contentTitle();
+            }
+
+            p{
+                @include contentText();
+                border-left: 4px solid $key1;
+            }
+
+            a{
+                color: $key1;
+                font-size: 1.2rem;
+                position: relative;
+                top: 60px;
+                right: 0;
+                border-color: $key1;
+            }
+        }
+
+        img{
+            position: absolute;
+            top: 180px;
+            right: 10%;
+        }
+    }
+
+    #third{
+        background-image: url(../images/pic3.jpg);
+
+        article{
+            @include articleSet();
+            text-align: left;
+            padding-left: 50%;
+
+            h2{
+                @include contentTitle();
+            }
+
+            p{
+                @include contentText();
+                border-left: 4px solid #fff;
+            }
+
+            a{
+                color: $fontColor;
+                font-size: 1.2rem;
+                position: relative;
+                top: 60px;
+            }
+        }
+    }
+
+    #fourth{
+        background-color: $key2;
+        height: 300px;
+
+        article{
+            @include articleSet();
+            padding-top: 60px;
+            text-align: center;
+
+            h2{
+                @include contentTitle();
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 60px;
+            }
+
+            a{
+                color: $fontColor;
+            }
+        }
+    }
+}
+
+footer{
+    .icons{
+        background-color: $secColor;
+        height: 500px;
+        text-align: center;
+        padding-top: 200px;
+        box-sizing: border-box;
+
+        li{
+            list-style: none;
+            display: inline-block;
+
+            .label{
+                display: none;
+            }
+
+            a.fab{
+                text-decoration: none;
+                color: $mainColor;
+                font-size: 3em;
+                display: inline-block;
+                margin: 0 10px;
+
+                &:hover{
+                    text-decoration: none;
+                    color: $key1;
+                }
+            }
+        }
+    }
+
+    .copyright{
+        text-align: center;
+        margin: 25px auto;
+        font-size: 0.8rem;
+    }
+}
